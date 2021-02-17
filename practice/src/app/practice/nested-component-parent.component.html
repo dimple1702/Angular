@@ -1,0 +1,43 @@
+<style>
+
+  table {
+    border-collapse: collapse;
+    width: 50%;
+  }
+
+  td,
+  th {
+    border: 1px solid grey;
+    text-align: center;
+    padding: 4px;
+  }
+</style>
+
+<h2>~~Nested Components</h2>
+<nested-component-child [all]="getTotalEmpCount()" [male]="getMaleCount()" [female]="getFemaleCount()"
+  (countRadioButtonSelectionChanged)="onBtnChange($event)"></nested-component-child>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let emp of employees;">
+      <tr *ngIf="BtnSelected=='all' ||
+                 BtnSelected==emp.gender">
+        <td>{{emp.code | uppercase}}</td>
+        <td>{{emp.firstName + ' ' + emp.lastName | title: emp.gender}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.age}}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+
+
+<p><i><strong>Note: </strong>In this section, customized pipe, interface, service features are used.</i></p>

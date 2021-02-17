@@ -1,0 +1,22 @@
+<h2>~~Pipes</h2>
+<h3>Hey there!! I'm in the pipes component</h3>
+<ul>
+  <li>
+    <p>Uppercase Pipe ---> <b>{{title | uppercase}}</b></p>
+    <p>Lowercase Pipe ---> <b>{{title | lowercase}}</b></p>
+  </li>
+  <li>
+    <p>Currency Pipe (USD) ---> <b>{{205 | currency:'USD'}}</b></p>
+    <p>Currency Pipe (INR) ---> <b>{{205 | currency:'INR'}}</b></p>
+  </li>
+  <li>
+    <p>Date Pipe---> <b>{{todaydate | date:'shortTime'}}</b></p>
+    <p>Date Pipe---> <b>{{todaydate | date:'d/M/y'}}</b></p>
+  </li>
+  <li>
+    <p>Percent Pipe---> <b>{{.9 | percent}}</b></p>
+  </li>
+  <li>
+    <p>Customized Pipe(2 to power 9): {{2 | power: 9}}</p>
+  </li>
+</ul>

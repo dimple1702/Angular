@@ -1,0 +1,55 @@
+<!--Header-->
+<div class="header bg-dark" style="text-align: center;">
+  <span class="text-white">How we are responsible to COVID-19</span>
+  <!-- Button trigger modal -->
+  <button type="button" class="badge badge-pill badge-danger mx-2 my-2" data-toggle="modal" data-target="#exampleModal" (click)="open()">
+      Announcement!!
+  </button>
+
+
+<!--Navigation Bar-->
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-danger">
+  <a class="navbar-brand ml-4" [routerLink]="'/home'">
+    <img src="./favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="title">
+    <span style="color: #fff;">Dimple Verma</span>
+  </a>
+    <!-- Step 3: Toggle the value of the property when the toggler button is clicked. -->
+  <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+    &#9776;
+  </button>
+
+  <!-- Step 2: Add the ngbCollapse directive to the element below. -->
+  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <!-- Step 4: Close the menu when a link is clicked. -->
+        <a class="nav-link" id="onHover" [routerLink]="'/home'" (click)="isMenuCollapsed = true">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="onHover" [routerLink]="'/about'" (click)="isMenuCollapsed = true">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="onHover" [routerLink]="'/contact'" (click)="isMenuCollapsed = true">Contact</a>
+      </li>
+      <li class="nav-item">
+        <div class="row">
+            <div class="col">
+              <div ngbDropdown class="d-inline-block">
+                <a class="nav-link" id="onHover" ngbDropdownToggle (click)="isMenuCollapsed = true">Practice</a>
+                <div ngbDropdownMenu aria-labelledby="onHover" class="bg-danger" [routerLink]="'/practice'" >
+                  <button ngbDropdownItem >LifeCycle</button>
+                  <button ngbDropdownItem>Interpolation</button>
+                  <button ngbDropdownItem>Nested Components</button>
+                  <button ngbDropdownItem>Property-Binding</button>
+                  <button ngbDropdownItem>Event-Binding</button>
+                  <button ngbDropdownItem>Two-way Binding</button>
+                  <button ngbDropdownItem>ngFor-trackBy</button>
+                  <button ngbDropdownItem>Pipes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </li>
+    </ul>
+  </div>
+</nav>

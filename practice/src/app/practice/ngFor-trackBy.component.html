@@ -1,0 +1,54 @@
+<style>
+  button {
+  background-color: lightblue;
+  margin: 7px;
+  font-size: 15px;
+  border-radius : 10px;
+  border: none;
+  padding: 7px;
+}
+button:hover{
+    cursor: pointer;
+}
+
+table{
+    border-collapse: collapse;
+}
+td, th{
+  border: 1px solid grey;
+  text-align: center;
+  padding: 4px;
+}
+</style>
+<h2>~~Practicing ngFor trackBy</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Index</th>
+      <th>Is First</th>
+      <th>Is Last</th>
+      <th>Is Even</th>
+      <th>Is Odd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let emp of employees; trackBy:trackByEmpCode; let i = index; let isFirst = first; let isLast = last; let isEven=even; let isOdd = odd;">
+      <td>{{emp.code | uppercase}}</td>
+      <td>{{emp.firstName + ' ' + emp.lastName | title: emp.gender}}</td>
+      <td>{{emp.gender}}</td>
+      <td>{{emp.age}}</td>
+      <td>{{i}}</td>
+      <td>{{isFirst}}</td>
+      <td>{{isLast}}</td>
+      <td>{{isEven}}</td>
+      <td>{{isOdd}}</td>
+    </tr>
+    <tr *ngIf="!employees || employees.length == 0">
+  </tbody>
+</table>
+<button (click)="getEmployees()">Refresh</button>

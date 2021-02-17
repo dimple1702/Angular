@@ -1,0 +1,119 @@
+<!--Section1-->
+<ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows">
+    <ng-template ngbSlide *ngFor="let image of images">
+        <div class="picsum-img-wrapper">
+            <img [src]="image" alt="Random slide">
+        </div>
+        <div class="carousel-caption" style="color: white; background-color: rgba(1,1,1, 0.4); border-radius: 20px;">
+            <h2>Go on a journey of your dreams!!</h2>
+            <p style="font-size: 20px;">Sometimes the problem is not that there is no time to travel, but that there is
+                no time to plan it. We are always in a hurry, and we can not slow down and take the time to plan our
+                vacations. But you are lucky, you have us. Save time and use our service.</p>
+        </div>
+    </ng-template>
+</ngb-carousel>
+
+<!--Section2-->
+<div class="container-fluid bg-dark" style="padding: 20px; color: black;">
+    <div class="row mx-3 my-3" style="text-align: center;">
+        <div class="col-sm-6">
+            <h4 class="mt-0">This trip will be the best</h4>
+            <p>Support Acme Outdoors</p>
+        </div>
+        <div class="col-sm-6">
+            <p>In travel and after it, as a rule, there is an increase in the general vitality and ability to resist the
+                external pressure of the environment. The need to solve everyday road problems contributes to the
+                development of practical intelligence.</p>
+        </div>
+    </div>
+    <!--Three Cards-->
+    <div class="row mx-3 mb-4">
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="img-zoom">
+                    <img src="assets/imgs/china.jpg" class="card-img-top" alt="shop">
+                </div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title">Memories of the trip</h5>
+                    <p class="card-text">Even if you feel confident and safe, your family and friends will surely be
+                        worried during your solitary journey.</p>
+                    <button type="button" class="btn btn-outline-dark" placement="right"
+                        ngbPopover="China Autumn, City Tour Urban.">
+                        Check Here!
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="img-zoom">
+                    <img src="assets/imgs/britain.jpg" class="card-img-top" alt="donate">
+                </div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title">Tips for a budget trip</h5>
+                    <p class="card-text">Travel is the best way to understand yourself and find out what you like, what
+                        you love, who you really are.</p>
+                    <button type="button" class="btn btn-outline-dark" placement="right"
+                        ngbPopover="Great Britain Travel City Tours, Historic, Park">
+                        Check Here!
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="img-zoom">
+                    <img src="assets/imgs/paris.jpg" class="card-img-top" alt="gift-card">
+                </div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title">Your travel blog</h5>
+                    <p class="card-text">Prioritize. All the sights can not be seen. Not resting at all, you run the
+                        risk of being oversaturated.</p>
+                    <button type="button" class="btn btn-outline-dark" placement="right" ngbPopover="Exclusive ParisTrip
+            City Tours, Urban">
+                        Check Here!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mx-5">
+    <div class="text-danger my-3" style="text-align: center;">
+        <h2><b>Our Features</b></h2>
+    </div>
+    <ngb-accordion [closeOthers]="true" class="my-4 mx-3">
+        <ngb-panel id="static-1">
+            <ng-template ngbPanelTitle>
+                <span class="text-danger"> <img src="assets/imgs/red-arrow.png" width="30" height="30"><b>Handpicked Hotels</b></span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                Travel is a model of a person's life. There are quite specific goals and expectations, there is a need to
+                move from a non-ideal present to a more good and promising future, there are difficulties in the way, grief,
+                disappointment and joy in achieving the desired.
+            </ng-template>
+        </ngb-panel>
+        <ngb-panel id="static-2" >
+            <ng-template ngbPanelTitle>
+                <span class="text-danger"> <img src="assets/imgs/red-arrow.png" width="30" height="30"><b>World Price Service</b></span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                To make a responsible decision, it is necessary to clearly understand the problem and be able to find
+                resources to overcome it. Very often, the answer can not be found by deliberate reflection and consistent
+                alignment of clear logical constructions. He is suddenly in the form of insights.
+            </ng-template>
+        </ngb-panel>
+        <ngb-panel id="static-3">
+            <ng-template ngbPanelTitle>
+                <span class="text-danger"> <img src="assets/imgs/red-arrow.png" width="30" height="30"><b>Best Price Guarantee</b></span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                Traveling is a wonderful way to experiment with new things. You can try to get on the rope over the abyss,
+                go rafting and just relax on the beach if you have never done it. You will have a sea of opportunities to
+                try something for the first time.
+            </ng-template>
+        </ngb-panel>
+    </ngb-accordion>
+    
+</div>

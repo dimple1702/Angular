@@ -1,0 +1,42 @@
+<div class=" container-fluid bg-dark">
+
+    <div class="mt-4 text-center text-white top-section">
+        <h3 class="display-4"><strong>Plan your dream trip</strong></h3>
+        <p class="lead">If you're going somewhere on vacation or a long journey, there is a change in the scenario of
+            life,
+            according to which you lived for several months, or even years.</p>
+    </div>
+
+    <div class="mt-4 text-center text-white">
+        <h3>{{title | uppercase}}</h3>
+        <p class="lead"> Contact Us!!</p>
+    </div>
+    <div class="row" style="margin-top: 0;">
+        <div class="col md-6 text-center">
+            <img src="assets/imgs/contact.png" width="260" height="260">
+        </div>
+        <div class="container col md-6 mb-4 ">
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                <label for="firstName" class="col-form-label">First Name:</label>
+                <input class='form-control' type='text' id='firstName' formControlName='firstName'
+                    [ngClass]="{'is-invalid':myForm.get('firstName').invalid && myForm.get('firstName').touched}" />
+                    <div class='invalid-feedback' *ngIf="myForm.get('firstName').errors">
+                        <div *ngIf="myForm.get('firstName').errors.required">Please enter FirstName!!</div>
+                        <div *ngIf="myForm.get('firstName').errors.minlength"> Name must be at least 4 characters long.</div>
+                    </div>
+                    
+                <label for="lastName" class="col-form-label">Last Name:</label>
+                <input class='form-control' type='text' id='lastName' formControlName='lastName'>
+
+                <label for="email" class="col-form-label">Email:</label>
+                <input class='form-control' type='email' id='email' formControlName='email' 
+                    [ngClass]="{'is-invalid':myForm.get('email').invalid && myForm.get('email').touched}" />
+                <div class='invalid-feedback' *ngIf="myForm.get('email').errors">
+                    <div *ngIf="myForm.get('email').errors.email">Please enter valid email!!</div>
+                    <div *ngIf="myForm.get('email').errors.required">Please enter email!!</div>
+                </div>
+                <button type="submit" class="btn btn-outline-danger my-3" [disabled]="!myForm.valid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<h2>~~{{title}}</h2>
+<ul>
+  <li><p>My name is: {{name}}</p> </li>
+  <li> <p>The result of 1+4-2+5 is {{1+4-2+5}}</p> </li>
+  <li> <p>I'm in {{getResult()}} i.e. declared in interpolation.component.ts file.</p> </li>
+  <li> <h4>{{recommended}}</h4> <img [src]="logo" width="40" height="40"> </li>
+  <li> <h4>Taking elements of array: </h4>
+    <ul>
+      <li *ngFor="let name of list">{{name}}</li>
+    </ul>
+  </li>
+  <li>
+    <div (keyup)="0">  
+      <h4>Template context: template reference variables </h4>
+      <label>Type something: <input #customerInput>
+      <br><br> You have entered: {{customerInput.value}}</label>
+    </div>
+  </li>
+</ul>

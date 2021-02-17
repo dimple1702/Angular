@@ -1,0 +1,167 @@
+<!-- back -->
+<div class="back">
+    <i class="bi bi-arrow-left"></i>
+    <a class="back-link" [routerLink]="'/retailer'">Back to Retailer</a>
+</div>
+<!-- section -->
+<div class="mb-5 bg-white rounded main-box">
+    <div class="card">
+        <div class="card-body p-0">
+            <div class="card-title">
+                <!-- Basket -->
+                <div class="row mx-3">
+                    <div class="col-md-6 mt-4 mb-2">
+                        <i class="bi bi-cart3 mr-2"></i>
+                        <h5 class="d-inline-block mr-2 mt-2">Basket</h5>
+                        <p class="d-inline-block text-grey mt-2"> ( 8 products | 24 Cases | £154.99 ) </p>
+                    </div>
+                    <!-- Basket-form -->
+                    <div class="col-md-6 mt-4 mb-2 d-flex">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+                      <i class="bi bi-calendar3"></i>
+                    </button>
+                                    </div>
+                                    <input class="form-control p-0" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                                </div>
+                            </div>
+                        </form>
+                        <div class="input-icon mt-0">
+                            <i class="bi bi-search icon"></i>
+                            <input type="text" placeholder="Search Products" class="shadowed " id="search">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-text">
+                <div class="mx-4 heading">
+                    <hr>
+                    <h5 class="my-3">Current Products</h5>
+                </div>
+
+                <!-- Table 1 -->
+                <div class="table-responsive px-4 py-3 mb-5">
+                    <table class="table table-striped col-md-12">
+                        <thead>
+                            <tr>
+                                <th scope="col">Added Date</th>
+                                <th scope="col">Product Code</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Unit Size</th>
+                                <th scope="col">Cost</th>
+                                <th scope="col">RSP</th>
+                                <th scope="col">Last Order</th>
+                                <th scope="col">Status</th>
+                                <th scope="col" class="col-btn">Qty.</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let order of orders; let i = index; let e = even">
+                                <td>{{lastOrder| date: 'MMMM d, y'}}</td>
+                                <td class="code">
+                                    {{order.code}}
+                                </td>
+                                <td scope="col"><img class="mr-1" src={{order.url}} alt="chips" width="30" height="30">{{order.name}}</td>
+                                <td>{{order.unit | units}}</td>
+                                <td>{{order.cost | currency:'GBP'}}</td>
+                                <td>{{order.rsp | currency: 'GBP'}}</td>
+                                <td>{{lastOrder| date: 'MMMM d, y'}}</td>
+                                <td *ngIf="i%2 == 0 else elseBlock1">Published</td>
+                                <ng-template #elseBlock1>
+                                    <td>Not Published</td>
+                                </ng-template>
+                                <td scope="col">
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="qty" (click)="increment()"><i class="bi bi-plus"></i></button>
+                                        <button type="button" class="number">{{number}}</button>
+                                        <button type="button" class="qty" (click)="decrement()"><i class="bi bi-dash"></i></button>
+                                    </div>
+                                </td>
+                                <td><i class="bi bi-trash"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- buttons -->
+                    <button type="button" class="float-right btn btn-pink m-2 mr-5 p-2">Publish</button>
+                    <button type="button" class="float-right btn btn-outline-pink m-2 p-2">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 2nd table -->
+<div class="main-box">
+    <div class="card mt-5">
+        <div class="card-body p-0">
+            <div class="card-title">
+                <div class="d-flex justify-content-between">
+                    <div class="ml-4 mt-4 heading">
+                        <h5 class="my-3">History</h5>
+                    </div>
+                    <div class="mt-4 mr-5">
+                        <p class="text-grey m-0">Year</p>
+                        <div ngbDropdown class="line">
+                            <button class="btn text-dark bg-white dropdown-btn p-0" id="dropdownBasic1" type="button" ngbDropdownToggle>
+                2020 <i class="bi bi-chevron-down text-dark float-right ml-5"></i></button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button class="nav-list" ngbDropdownItem>2016</button>
+                                <button class="nav-list" ngbDropdownItem>2017</button>
+                                <button class="nav-list" ngbDropdownItem>2018</button>
+                                <button class="nav-list" ngbDropdownItem>2019</button>
+                                <button class="nav-list" ngbDropdownItem>2020</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-text">
+                <!-- Table 2 -->
+                <div class="table-chips px-4 py-3" style="width: 100%; overflow-x: auto;">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Added Date</th>
+                                <th scope="col">Product Code</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Unit Size</th>
+                                <th scope="col">Cost</th>
+                                <th scope="col">RSP</th>
+                                <th scope="col">Last Order</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let order of orders; let i = index; let e = even">
+                                <td>{{lastOrder| date: 'MMMM d, y'}}</td>
+                                <td class="code">
+                                    {{order.code}}
+                                </td>
+                                <td><img class="mr-1" src={{order.url}} alt="chips" width="30" height="30">{{order.name}}</td>
+                                <td>{{order.unit | units}}</td>
+                                <td>{{order.cost | currency:'GBP'}}</td>
+                                <td>{{order.rsp | currency: 'GBP'}}</td>
+                                <td>{{lastOrder| date: 'd-MMMM-y'}}</td>
+                                <td *ngIf="i%2 == 0 else elseBlock1"><span class="bought">Bought</span></td>
+                                <ng-template #elseBlock1>
+                                    <td><span style="color:rgb(238, 0, 127);">Removed</span></td>
+                                </ng-template>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .col-btn {
+        width: fit-content;
+    }
+</style>

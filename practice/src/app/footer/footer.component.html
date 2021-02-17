@@ -1,0 +1,38 @@
+<div class="bg-danger" style="width: 100%;">
+    <div class="row" style="margin-right: 0;">
+        <div class="col sm-12 my-3" style="text-align: center;">
+            <a class="navbar-brand" style="color: white; " href="#">
+                <img src="./assets/imgs/logo.png" width="35" height="35" class="d-inline-block align-top" alt="title"
+                    loading="lazy">
+                <span>Dimple Verma</span>
+                <hr>
+
+                <span>Contact Us-</span><br>
+                <div class="mt-1">
+                    <img src="./assets/imgs/gmail.png" width="35" height="35" class="d-inline-block align-top mx-1"
+                        alt="title" placement="top" ngbTooltip="Gmail">
+                    <img src="./assets/imgs/facebook.png" width="35" height="35" class="d-inline-block align-top mr-1"
+                        alt="title" placement="top" ngbTooltip="Facebook">
+                    <img src="./assets/imgs/instagram.png" width="35" height="35" class="d-inline-block align-top mr-1"
+                        alt="title" placement="top" ngbTooltip="Instagram">
+                    <img src="./assets/imgs/twitter.png" width="35" height="35" class="d-inline-block align-top mr-1"
+                        alt="title" placement="top" ngbTooltip="Twitter">
+                </div>
+            </a>
+        </div>
+        <div class="col sm-12 mx-5 my-3 text-white">
+            <p>This is a powerful tool, compatible with the woo-commerce retina and fully responsive theme that has a
+                super support 24/7/365 and an amazing PageBuilder. We are the VisualModo and we work hard for you work
+                less.</p>
+            Rate Us: <ngb-rating [(rate)]="currentRate" (click)="show = true"></ngb-rating>
+            <hr *ngIf="show" />
+            <ngb-toast *ngIf="show" header="I am a toast" [delay]="3000" [autohide]="autohide"
+                (mouseenter)="autohide = false" (mouseleave)="autohide = true" (hide)="show = false; autohide = true"
+                [class.bg-danger]="!autohide">
+                <div *ngIf="autohide" class="text-dark"> Try to mouse hover me.</div>
+                <div *ngIf="!autohide"> Thanks for rating us! </div>
+            </ngb-toast>
+        </div>
+        <hr>
+    </div>
+</div>

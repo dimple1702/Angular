@@ -1,0 +1,10 @@
+#onHover{
+    color: white;
+    font-size: 18px;
+}
+#onHover:hover{
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+    padding: 7px;
+}

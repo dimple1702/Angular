@@ -1,0 +1,31 @@
+<style>
+  button {
+      background-color: lightblue;
+      margin: 7px;
+      font-size: 15px;
+      border-radius : 10px;
+      border: none;
+      padding: 7px;
+    }
+    button:hover, a:hover{
+        cursor: pointer;
+        color: blue;
+    }
+    .link{
+      color: blue;
+      font-weight: bold;
+      font-size: 20px;
+    }
+</style>
+<div>
+  <h2>~~Component lifecycle hooks</h2>
+  <button (click)="decrement()">Subtraction</button>
+  <button (click)="increment()">Addition</button>
+  <button (click)="switchVisibility()">Show/Hide</button><br />
+  <a class="link" (click)="updateName()">Update Name</a>
+</div>
+<lifecycle-child 
+  *ngIf="isVisible"
+  [myNewNumber]="count"
+  [myName]="name"
+></lifecycle-child>

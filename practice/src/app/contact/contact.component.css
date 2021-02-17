@@ -1,0 +1,32 @@
+:host {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    display: block;
+    width: 6em;
+    margin: .5em 0;
+    color: #DC3545;
+    padding: 2px;
+    font-weight: bold;
+  }
+  
+  input {
+    height: 2em;
+    font-size: 1em;
+    padding-left: .4em;
+    border-radius: 5px;
+  }
+  .cross-validation-error input {
+    border-left: 10px solid red;
+  }
+  .top-section{
+    border-radius: 10px; 
+    background-color: rgba(1,1,1,0.3);
+    padding: 10px;
+  }
+
+  button[disabled]{
+      cursor: not-allowed;
+  }

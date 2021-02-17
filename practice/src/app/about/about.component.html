@@ -1,0 +1,46 @@
+<div class="bg-dark">
+    <div class="row md-6">
+        <div class="col mt-3 text-danger" style="text-align: center;">
+            <h2><b>Why Choose Us</b></h2>
+            <p class="text-white lead">Travel Website Reviews:</p>
+        </div>
+    </div>
+    <div class="row md-6 mx-3">
+        <div class="col-md-4 my-3" *ngFor="let post of posts | slice: (page-1) * pageSize : page * pageSize">
+            <div class="media media-style media-styling">
+                <img src="assets/imgs/user.png" width="40" height="40" class="mr-3" alt="hotel">
+                <div class="media-body">
+                    <h5 class="mt-0">{{post.title}}</h5>
+                    <span>{{post.body}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
+            aria-label="Default pagination" [collectionSize]="collectionSize">
+        </ngb-pagination>
+        <hr>
+    </div>
+    <div class="container-fluid text-white " style="padding: 20px; text-align: center;">
+        <div class="mx-3">
+            <h2 class="mt-0">This trip will be the best</h2>
+            <p class="lead">It is impossible to see everything in one trip, to visit all the important places, to be
+                photographed against the background of all the monuments and to stand in all queues to the most
+                important tourist places. Try to relax and your journey will be worderful.</p>
+        </div>
+        <div class="row mx-3">
+            <div class="col">
+                <h2 class="mt-0">942</h2>
+                <p class="lead">Trips</p>
+            </div>
+            <div class="col">
+                <h2 class="mt-0">1492</h2>
+                <p class="lead">Happy Customers</p>
+            </div>
+        </div>
+        <div class="mx-3">
+            <p>And Many more to go....</p>
+        </div>
+    </div>
+</div>
